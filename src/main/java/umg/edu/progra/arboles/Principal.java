@@ -126,6 +126,21 @@ public class Principal {
             System.out.println("LCA(1,999) => lanzada IllegalArgumentException como se esperaba: " + ex.getMessage());
         }
 
+        // --- Problema 5: invertir (espejo) ---
+        System.out.println("\n--- Prueba invertir() (espejo) ---");
+        System.out.print("InOrden antes: ");
+        arbol2.inOrden();
+        System.out.println("Impresion antes:");
+        arbol2.imprimirArbol();
+
+        System.out.println("Aplicando invertir()...");
+        arbol2.invertir();
+
+        System.out.print("InOrden despues (ya no ordenado): ");
+        arbol2.inOrden();
+        System.out.println("Impresion despues:");
+        arbol2.imprimirArbol();
+
         /*
          * Ejercicios
          *

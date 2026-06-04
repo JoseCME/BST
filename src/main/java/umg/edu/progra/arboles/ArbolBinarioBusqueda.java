@@ -388,6 +388,25 @@ public class ArbolBinarioBusqueda {
         imprimirArbolRecursivo(nodo.izquierdo, nivel + 1);
     }
 
+    /**
+     * Problema 5: invertir (espejo) el arbol intercambiando izquierdo/derecho
+     * en todos los nodos.
+     */
+    public void invertir() {
+        invertirRec(raiz);
+    }
+
+    private void invertirRec(Nodo nodo) {
+        if (nodo == null) {
+            return;
+        }
+        Nodo tmp = nodo.izquierdo;
+        nodo.izquierdo = nodo.derecho;
+        nodo.derecho = tmp;
+        invertirRec(nodo.izquierdo);
+        invertirRec(nodo.derecho);
+    }
+
     // ============================================================
     // COLA INTERNA (lista enlazada simple) usada para BFS.
     // Se implementa aqui para NO depender de java.util.
