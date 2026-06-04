@@ -108,6 +108,24 @@ public class Principal {
         arbol.imprimirArbol();
         System.out.println("esBSTValido() (debe ser false): " + arbol.esBSTValido());
 
+        // --- Problema 4: Ancestro comun mas bajo (LCA) ---
+        System.out.println("\n--- Prueba ancestroComunMasBajo() ---");
+        // Restauramos el arbol original para las pruebas (reconstruimos)
+        ArbolBinarioBusqueda arbol2 = new ArbolBinarioBusqueda();
+        int[] valores2 = { 50, 30, 70, 20, 40, 60, 80, 10 };
+        for (int v : valores2) {
+            arbol2.insertar(v);
+        }
+        System.out.println("LCA(10,40) => esperado 30 : " + arbol2.ancestroComunMasBajo(10,40));
+        System.out.println("LCA(10,80) => esperado 50 : " + arbol2.ancestroComunMasBajo(10,80));
+        System.out.println("LCA(60,80) => esperado 70 : " + arbol2.ancestroComunMasBajo(60,80));
+
+        try {
+            System.out.println("LCA(1,999) => debe lanzar IllegalArgumentException: " + arbol2.ancestroComunMasBajo(1,999));
+        } catch (IllegalArgumentException ex) {
+            System.out.println("LCA(1,999) => lanzada IllegalArgumentException como se esperaba: " + ex.getMessage());
+        }
+
         /*
          * Ejercicios
          *

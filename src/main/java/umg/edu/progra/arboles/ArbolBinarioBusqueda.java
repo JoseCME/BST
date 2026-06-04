@@ -260,6 +260,28 @@ public class ArbolBinarioBusqueda {
         return esBSTRec(nodo.izquierdo, min, nodo.dato) && esBSTRec(nodo.derecho, nodo.dato, max);
     }
 
+    /**
+     * Problema 4: Ancestro Comun Mas Bajo (LCA) para dos valores dados.
+     * Aprovecha la propiedad del BST para bajar desde la raiz.
+     * Lanza IllegalArgumentException si `a` o `b` no existen en el arbol.
+     */
+    public int ancestroComunMasBajo(int a, int b) {
+        if (!contiene(a) || !contiene(b)) {
+            throw new IllegalArgumentException("Uno o ambos valores no existen en el arbol");
+        }
+        Nodo actual = raiz;
+        while (actual != null) {
+            if (a < actual.dato && b < actual.dato) {
+                actual = actual.izquierdo;
+            } else if (a > actual.dato && b > actual.dato) {
+                actual = actual.derecho;
+            } else {
+                return actual.dato;
+            }
+        }
+        throw new IllegalStateException("No se encontro LCA; arbol probablemente modificado");
+    }
+
     // ============================================================
     // RECORRIDOS DEL ARBOL
     // ============================================================
