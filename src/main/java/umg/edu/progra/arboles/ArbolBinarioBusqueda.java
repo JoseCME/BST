@@ -240,6 +240,26 @@ public class ArbolBinarioBusqueda {
         return 1 + (izq > der ? izq : der);
     }
 
+    /**
+     * Problema 3: validar que el arbol cumple la propiedad de BST.
+     */
+    public boolean esBSTValido() {
+        return esBSTRec(raiz, null, null);
+    }
+
+    private boolean esBSTRec(Nodo nodo, Integer min, Integer max) {
+        if (nodo == null) {
+            return true;
+        }
+        if (min != null && nodo.dato <= min) {
+            return false;
+        }
+        if (max != null && nodo.dato >= max) {
+            return false;
+        }
+        return esBSTRec(nodo.izquierdo, min, nodo.dato) && esBSTRec(nodo.derecho, nodo.dato, max);
+    }
+
     // ============================================================
     // RECORRIDOS DEL ARBOL
     // ============================================================

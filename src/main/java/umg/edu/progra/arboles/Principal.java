@@ -95,6 +95,19 @@ public class Principal {
         desbalanceado.imprimirArbol();
         System.out.println("esBalanceado() (debe ser false): " + desbalanceado.esBalanceado());
 
+        // --- Problema 3: validar BST ---
+        System.out.println("\n--- Prueba esBSTValido() ---");
+        System.out.println("esBSTValido() (debe ser true): " + arbol.esBSTValido());
+
+        // Rompemos la propiedad del BST manualmente: colocamos un valor grande en el subarbol izquierdo
+        System.out.println("\nRompemos la propiedad del BST (modificando un nodo)...");
+        Nodo raiz = arbol.getRaiz();
+        if (raiz != null && raiz.izquierdo != null) {
+            raiz.izquierdo.dato = 1000; // viola la propiedad (debe ser < 50)
+        }
+        arbol.imprimirArbol();
+        System.out.println("esBSTValido() (debe ser false): " + arbol.esBSTValido());
+
         /*
          * Ejercicios
          *
