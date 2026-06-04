@@ -282,15 +282,3 @@ Esta sección contiene la información que el estudiante debe incluir en su entr
   - No se utilizó `java.util.*` ni librerías externas.
   - La cola usada para BFS está implementada manualmente dentro de `ArbolBinarioBusqueda`.
 
-- **Entregables sugeridos**
-
-  - Repositorio Git con commits separados por cada problema (ya realizado localmente).
-  - Capturas de pantalla de la salida de `Principal` demostrando cada método.
-  - Este README actualizado (esta sección) describiendo cómo compilar/ejecutar y qué hace cada método.
-
-Si quieres que realice el commit de esta modificación al `README.md`, dímelo y lo hago, o puedes hacerlo tú con:
-
-```powershell
-git add README.md
-git commit -m "docs: README del estudiante con instrucciones y métodos implementados"
-```
