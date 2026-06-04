@@ -248,6 +248,46 @@ Esta sección contiene la información que el estudiante debe incluir en su entr
   - Capturas de pantalla de la salida de `Principal` demostrando cada método.
   - Este README actualizado (esta sección) describiendo cómo compilar/ejecutar y qué hace cada método.
 
+
+---
+
+## README del estudiante — Entrega
+
+Esta sección contiene la información que el estudiante debe incluir en su entrega y un resumen de lo implementado en este repositorio.
+
+- **Cómo compilar y ejecutar**
+
+  Desde la carpeta del proyecto (`arboles/`):
+
+  ```bash
+  mvn compile
+  java -cp target/classes umg.edu.progra.arboles.Principal
+  ```
+
+- **Métodos implementados (problemas solicitados)**
+
+  1. `contarNodos()` — cuenta recursivamente todos los nodos (no usa el campo `tamanio`).
+  2. `esBalanceado()` — verifica que el árbol esté balanceado (diferencia de alturas ≤ 1 por nodo).
+  3. `esBSTValido()` — valida la propiedad BST usando rangos `(min,max)` de forma recursiva.
+  4. `ancestroComunMasBajo(int a, int b)` — devuelve el ancestro común más bajo (LCA); lanza `IllegalArgumentException` si falta alguno de los valores.
+  5. `invertir()` — invierte (espejo) el árbol intercambiando `izquierdo`/`derecho` en todos los nodos.
+
+- **Dónde están las pruebas**
+
+  - Las pruebas y ejemplos se añadieron en la clase `Principal` (`src/main/java/umg/edu/progra/arboles/Principal.java`).
+  - `Principal` muestra inserciones, eliminaciones, recorridos, y pruebas/ejemplos de cada método implementado.
+
+- **Reglas cumplidas**
+
+  - No se utilizó `java.util.*` ni librerías externas.
+  - La cola usada para BFS está implementada manualmente dentro de `ArbolBinarioBusqueda`.
+
+- **Entregables sugeridos**
+
+  - Repositorio Git con commits separados por cada problema (ya realizado localmente).
+  - Capturas de pantalla de la salida de `Principal` demostrando cada método.
+  - Este README actualizado (esta sección) describiendo cómo compilar/ejecutar y qué hace cada método.
+
 Si quieres que realice el commit de esta modificación al `README.md`, dímelo y lo hago, o puedes hacerlo tú con:
 
 ```powershell
